@@ -36,7 +36,7 @@ def main ():
     blur = cv2.GaussianBlur(res,(0,0),sig) 
     for i in range (X): #Quantidade de vezes para realizar filtro gaussiano        
         sig*=2
-        blur2 = cv2.GaussianBlur(blur,(0,0),sig)
+        blur2 = cv2.GaussianBlur(res,(0,0),sig)
         blur = cv2.addWeighted(blur, 1, blur2, 1, 0) 
         #cv2.imshow(("Imagem borrada de " + str(i)), blur)
     
@@ -47,7 +47,7 @@ def main ():
         r*=2
         c*=2  
         for j in range(2): #Range 2 pois pelos slides com janela 19 o equivalente é 3x
-            blur2=cv2.blur(blur,(r,c))
+            blur2=cv2.blur(res,(r,c))
         blur=cv2.addWeighted(blur, 1, blur2, 1, 0)'''
 
     cv2.imshow("Imagem borrada", blur)
